@@ -4,18 +4,18 @@ $(function() {
     document.mozFullScreenEnabled ||
     document.documentElement.webkitRequestFullScreen;
 
-  function requestFullscreen(element) {
-    if (element.requestFullscreen) {
-      element.requestFullscreen();
-    } else if (element.mozRequestFullScreen) {
-      element.mozRequestFullScreen();
-    } else if (element.webkitRequestFullScreen) {
-      element.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+  function requestFullscreen(body) {
+    if (body.requestFullscreen) {
+      body.requestFullscreen();
+    } else if (body.mozRequestFullScreen) {
+      body.mozRequestFullScreen();
+    } else if (body.webkitRequestFullScreen) {
+      body.webkitRequestFullScreen(body.ALLOW_KEYBOARD_INPUT);
     }
   }
 
   if (document.fullscreenEnabled) {
-    requestFullscreen(document.documentElement);
+    requestFullscreen(document.body);
   }
 
   // // page scroll
